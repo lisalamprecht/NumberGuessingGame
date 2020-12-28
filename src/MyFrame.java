@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 import java.awt.*;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -28,8 +27,6 @@ public class MyFrame extends JFrame implements ActionListener {
     int randomNumber = rand.nextInt(101); //get a rand number between 0-100
     int tallyValue = 0;
     int bestRoundValue = 0;
-	
-    
 
     //create a constructor
     MyFrame() {
@@ -110,7 +107,6 @@ public class MyFrame extends JFrame implements ActionListener {
         c.gridy = 5;
         this.add(playAgainButton, c);
         
-        
         this.setTitle("Number Guessing Game");
         this.setVisible(true); //make frame visible
         this.pack(); //frame size adjusts to components
@@ -124,13 +120,10 @@ public class MyFrame extends JFrame implements ActionListener {
     //add any unimplemented methods because we are using an interface
     @Override
     public void actionPerformed(ActionEvent e) {
-        
     }
 
     private void submit() {
-
         int textFieldValue;
-
         try {
             textFieldValue = Integer.parseInt(textField.getText());
             tallyValue++;
@@ -147,7 +140,6 @@ public class MyFrame extends JFrame implements ActionListener {
                     bestRoundValue = tallyValue;
                     bestRound.setText("Best Round:" + bestRoundValue);
                 }
-
                 textFieldValue = 0; // reset text field val
             }
             // if guess is less than randomNumber
@@ -175,7 +167,6 @@ public class MyFrame extends JFrame implements ActionListener {
     private void playAgain() {
         randomNumber = rand.nextInt(101);
         outputMessage.setText("Take a guess!");
-        
         tallyValue = 0;
         tally.setText("Number of guesses:" + tallyValue);
     }
